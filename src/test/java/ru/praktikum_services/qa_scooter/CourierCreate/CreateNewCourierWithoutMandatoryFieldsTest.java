@@ -2,8 +2,10 @@ package ru.praktikum_services.qa_scooter.CourierCreate;
 
 import io.qameta.allure.Description;
 import io.qameta.allure.Story;
+import io.restassured.response.ValidatableResponse;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import ru.praktikum_services.qa_scooter.client.CourierClient;
@@ -11,16 +13,15 @@ import ru.praktikum_services.qa_scooter.models.Courier;
 
 import java.util.Arrays;
 
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.equalTo;
+import static org.apache.http.HttpStatus.SC_BAD_REQUEST;
 import static ru.praktikum_services.qa_scooter.utilities.Utilities.replace;
-import org.junit.jupiter.api.DisplayName;
 
 
 @RunWith(value = Parameterized.class)
 public class CreateNewCourierWithoutMandatoryFieldsTest {
     private CourierClient courierClient;
     private String fieldName;
+    private ValidatableResponse response;
 
     @Before
     public void setUp(){
@@ -50,9 +51,10 @@ public class CreateNewCourierWithoutMandatoryFieldsTest {
         replace(courier,fieldName, null);
 
         //Act
-        String messageAboutCourierCreated = courierClient.createWithoutMandatoryField(courier);
+        response = courierClient.create(courier);
 
         //Assert
-        assertThat(messageAboutCourierCreated, equalTo("Недостаточно данных для создания учетной записи"));
+        response.assertThat().statusCode(SC_BAD_REQUEST);
+        response.assertThat().extract().path("message").equals("Недостаточно данных для создания учетной записи");
     }
 }

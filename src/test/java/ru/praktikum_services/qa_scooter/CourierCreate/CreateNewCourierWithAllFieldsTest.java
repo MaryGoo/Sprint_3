@@ -1,26 +1,26 @@
 package ru.praktikum_services.qa_scooter.CourierCreate;
 
-
 import io.qameta.allure.Description;
-import io.qameta.allure.Stories;
 import io.qameta.allure.Story;
+import io.restassured.response.ValidatableResponse;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.jupiter.api.DisplayName;
 import ru.praktikum_services.qa_scooter.client.CourierClient;
 import ru.praktikum_services.qa_scooter.models.Courier;
 import ru.praktikum_services.qa_scooter.models.CourierCredentials;
 
+import static org.apache.http.HttpStatus.SC_CREATED;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.not;
-import static org.junit.Assert.assertTrue;
-import org.junit.jupiter.api.DisplayName;
 
 public class CreateNewCourierWithAllFieldsTest {
 
     private CourierClient courierClient;
     private int courierId;
+    private ValidatableResponse response;
 
     @Before
     public void setUp(){
@@ -41,11 +41,12 @@ public class CreateNewCourierWithAllFieldsTest {
         Courier courier = Courier.getRandom();
 
         //Act
-        boolean isCourierCreated = courierClient.create(courier);
-        courierId = courierClient.login(CourierCredentials.from(courier));
+        response = courierClient.create(courier);
+        courierId = courierClient.login(CourierCredentials.from(courier)).extract().path("id");
 
         //Assert
-        assertTrue("Courier is not created", isCourierCreated);
+        response.assertThat().statusCode(SC_CREATED);
+        response.assertThat().extract().path("ok").equals(true);
         assertThat("Courier ID is incorrect", courierId, is(not(0)));
     }
 
@@ -59,11 +60,12 @@ public class CreateNewCourierWithAllFieldsTest {
         courier.setFirstName(null);
 
         //Act
-        boolean isCourierCreated = courierClient.create(courier);
-        courierId = courierClient.login(CourierCredentials.from(courier));
+        response = courierClient.create(courier);
+        courierId = courierClient.login(CourierCredentials.from(courier)).extract().path("id");
 
         //Assert
-        assertTrue("Courier is not created", isCourierCreated);
+        response.assertThat().statusCode(SC_CREATED);
+        response.assertThat().extract().path("ok").equals(true);
         assertThat("Courier ID is incorrect", courierId, is(not(0)));
     }
 }

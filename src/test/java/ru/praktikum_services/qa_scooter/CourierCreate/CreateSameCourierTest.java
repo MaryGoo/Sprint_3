@@ -2,6 +2,7 @@ package ru.praktikum_services.qa_scooter.CourierCreate;
 
 import io.qameta.allure.Description;
 import io.qameta.allure.Story;
+import io.restassured.response.ValidatableResponse;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -10,14 +11,17 @@ import ru.praktikum_services.qa_scooter.client.CourierClient;
 import ru.praktikum_services.qa_scooter.models.Courier;
 import ru.praktikum_services.qa_scooter.models.CourierCredentials;
 
+import static org.apache.http.HttpStatus.SC_CONFLICT;
 import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.*;
+import static org.hamcrest.Matchers.is;
+import static org.hamcrest.Matchers.not;
 
 public class CreateSameCourierTest {
     private CourierClient courierClient;
     private int courierId;
     Courier courier_1;
     Courier courier_2;
+    private ValidatableResponse response;
 
     @Before
     public void setUp(){
@@ -41,11 +45,12 @@ public class CreateSameCourierTest {
         courier_2.setLogin(courier_1.getLogin());
 
         //Act
-        String messageAboutCourierCreated = courierClient.createWithSameLogin(courier_2);
-        courierId = courierClient.login(CourierCredentials.from(courier_1));
+        response = courierClient.create(courier_2);
+        courierId = courierClient.login(CourierCredentials.from(courier_1)).extract().path("id");
 
         //Assert
-        assertThat(messageAboutCourierCreated, equalTo("Этот логин уже используется. Попробуйте другой."));
+        response.assertThat().statusCode(SC_CONFLICT);
+        response.assertThat().extract().path("message").equals("Этот логин уже используется. Попробуйте другой.");
         //TODO уточнить у аналитика текст сообщения. в доке указано: "Этот логин уже используется", по факту приходит другой
         assertThat("Courier ID is incorrect", courierId, is(not(0)));
     }
