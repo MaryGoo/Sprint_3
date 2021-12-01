@@ -26,6 +26,7 @@ public class OrderClient extends RestAssuredClient{
     public ValidatableResponse getList(Integer limit ){
         return given()
                 .spec(getBaseSpec())
+                .log().uri()
                 .when()
                 .get(ORDERS_PATH+"?limit="+limit+"&page=0")
                 .then();
@@ -35,6 +36,7 @@ public class OrderClient extends RestAssuredClient{
     public ValidatableResponse getOne(Integer track){
         return given()
                 .spec(getBaseSpec())
+                .log().uri()
                 .when()
                 .get(ORDERS_PATH+"/track?t="+track)
                 .then()
@@ -45,6 +47,7 @@ public class OrderClient extends RestAssuredClient{
     public ValidatableResponse acceptOrder(int orderId, int courierId){
         return given()
                 .spec(getBaseSpec())
+                .log().uri()
                 .when()
                 .put(ORDERS_PATH + "/accept/"+orderId+"?courierId="+courierId)
                 .then()
@@ -55,6 +58,7 @@ public class OrderClient extends RestAssuredClient{
     public ValidatableResponse acceptOrder( int courierId){
         return given()
                 .spec(getBaseSpec())
+                .log().uri()
                 .when()
                 .put(ORDERS_PATH + "/accept/?courierId="+courierId)
                 .then()
@@ -66,7 +70,7 @@ public class OrderClient extends RestAssuredClient{
         return given()
                 .spec(getBaseSpec())
                 .and()
-                .body("{\"id\":"+orderId+"}")
+                .body(String.format("{\"id\":%s}",orderId))
                 .log().body()
                 .when()
                 .put(ORDERS_PATH + "/finish/"+orderId)

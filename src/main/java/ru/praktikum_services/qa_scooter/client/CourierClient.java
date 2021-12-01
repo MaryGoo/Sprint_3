@@ -39,6 +39,7 @@ public class CourierClient extends RestAssuredClient {
     public ValidatableResponse delete(int courierId) {
         return given()
                 .spec(getBaseSpec())
+                .log().uri()
                 .when()
                 .delete(COURIER_PATH + "/" + courierId)
                 .then()
@@ -49,6 +50,7 @@ public class CourierClient extends RestAssuredClient {
     public ValidatableResponse delete() {
         return given()
                 .spec(getBaseSpec())
+                .log().uri()
                 .when()
                 .delete(COURIER_PATH + "/")
                 .then()

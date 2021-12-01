@@ -11,10 +11,8 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import ru.praktikum_services.qa_scooter.client.OrderClient;
 import ru.praktikum_services.qa_scooter.models.Order;
-import ru.praktikum_services.qa_scooter.models.OrderFromDB;
 
 import java.util.Arrays;
-import java.util.List;
 
 import static org.apache.http.HttpStatus.SC_CREATED;
 import static org.hamcrest.MatcherAssert.assertThat;

@@ -26,5 +26,6 @@ hs_err_pid*
 /.allure
 /target
 !/target/allure-results
+!/target/site
 /build
 *.iml

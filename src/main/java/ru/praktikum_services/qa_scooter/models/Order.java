@@ -1,12 +1,15 @@
 package ru.praktikum_services.qa_scooter.models;
 
+import com.github.javafaker.Faker;
 import org.apache.commons.lang3.RandomStringUtils;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Random;
+import java.util.Locale;
 
 public class Order {
+    static Faker faker = new Faker(new Locale("ru_RU"));
+
     public String firstName;
     public String lastName;
     public String address;
@@ -30,9 +33,9 @@ public class Order {
     }
 
     public static Order getRandom() {
-        final String firstName = setName();
-        final String lastName = setLastName();
-        final String address = setAddress();
+        final String firstName = faker.name().firstName();
+        final String lastName = faker.name().lastName();
+        final String address = faker.address().streetAddress();
         final String phone = "+7 903" + RandomStringUtils.random(6,"123456789");
         final String metroStation = RandomStringUtils.random(1,"123456789");
         final String deliveryDate = tomorrowWithYear();
@@ -43,28 +46,6 @@ public class Order {
     }
 
     static Calendar day = Calendar.getInstance();
-
-    public static String setName() {
-        String[] listFirstName = {"Евгения", "Екатерина", "Елена", "Епистима",
-                "Алексей", "Василий", "Влас", "Демьян", "Гордей", "Евгений", "Кузьма", "Макар", "Николай", "Прохор",
-                "Виталий", "Виктор", "Дементий", "Кондрат", "Константин", "Игнат", "Максим", "Сергей",
-                "Елисей", "Захар", "Илья", "Матвей", "Михаил", "Семен", "Фома"};
-        int f = (int) (Math.random() * listFirstName.length);
-        return listFirstName[f];
-    }
-
-    public static String setLastName() {
-        String[] listLastName = {"Князев", "Беспалов", "Уваров", "Шашков", "Бобылёв", "Рожков", "Сысоев", "Селиверстов",
-                "Иванко", "Петров", "Акуленко", "Кучкудуг", "Питерсон", "Пугачев", "Перегон", "Вейдер", "Степанко", "Куликов", "Мишустин"};
-        int f = (int) (Math.random() * listLastName.length);
-        return listLastName[f];
-    }
-
-    public static String setAddress() {
-        String[] subwayStations = {"Чистые пруды", "Бульвар Рокоссовского", "Волоколамская", "Красные Ворота", "Библиотека имени Ленина"};
-        int f = (int) (Math.random() * subwayStations.length);
-        return subwayStations[f] + "дом 4, кв 2";
-    }
 
     public static void tomorrow() {
         day.add(Calendar.DATE, 1);

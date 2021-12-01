@@ -16,7 +16,6 @@ import ru.praktikum_services.qa_scooter.models.CourierCredentials;
 import java.util.Arrays;
 
 import static org.apache.http.HttpStatus.SC_BAD_REQUEST;
-import static ru.praktikum_services.qa_scooter.utilities.Utilities.replace;
 
 @RunWith(value = Parameterized.class)
 public class loginWithoutMandatoryFieldsTest {
@@ -58,7 +57,13 @@ public class loginWithoutMandatoryFieldsTest {
     @DisplayName("Логин курьера в системе без обязательных полей")
     public void checkNewCourierCanNotLoginWithoutMandatoryFields() {
         //Arrange
-        replace(courier, fieldName, "");
+        if (fieldName =="login"){
+            courier.setLogin(null);
+        } else if (fieldName == "password"){
+            courier.setPassword(null);
+        } else {
+            System.out.println("Nothing to replace for null. Check the field name in the attributes.");
+        }
 
         //Act
         response = courierClient.login(CourierCredentials.from(courier));

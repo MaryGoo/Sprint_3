@@ -3,6 +3,7 @@ package ru.praktikum_services.qa_scooter.CourierCreate;
 import io.qameta.allure.Description;
 import io.qameta.allure.Story;
 import io.restassured.response.ValidatableResponse;
+import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.jupiter.api.DisplayName;
@@ -14,13 +15,11 @@ import ru.praktikum_services.qa_scooter.models.Courier;
 import java.util.Arrays;
 
 import static org.apache.http.HttpStatus.SC_BAD_REQUEST;
-import static ru.praktikum_services.qa_scooter.utilities.Utilities.replace;
-
 
 @RunWith(value = Parameterized.class)
 public class CreateNewCourierWithoutMandatoryFieldsTest {
     private CourierClient courierClient;
-    private String fieldName;
+    private Courier body;
     private ValidatableResponse response;
 
     @Before
@@ -31,14 +30,14 @@ public class CreateNewCourierWithoutMandatoryFieldsTest {
     @Parameterized.Parameters(name = "{index}: в теле запроса отмутствует поле: {0}")
     public static Iterable<Object[]> data() {
         return Arrays.asList(new Object[][]{
-                {"login"},
-                {"password"},
+                {Courier.getWithLoginOnly()},
+                {Courier.getWithPasswordOnly()},
                 }
         );
     }
 
-    public CreateNewCourierWithoutMandatoryFieldsTest(String fieldName){
-        this.fieldName = fieldName;
+    public CreateNewCourierWithoutMandatoryFieldsTest(Courier body){
+        this.body = body;
     }
 
     @Test
@@ -47,8 +46,7 @@ public class CreateNewCourierWithoutMandatoryFieldsTest {
     @DisplayName("Создание курьера без обязательных полей невозможно")
     public void checkCourierCanNotBeCreatedWithoutMandatoryFields(){
         //Arrange
-        Courier courier = Courier.getRandom();
-        replace(courier,fieldName, null);
+        Courier courier = body;
 
         //Act
         response = courierClient.create(courier);

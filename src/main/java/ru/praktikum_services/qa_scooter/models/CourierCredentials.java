@@ -2,8 +2,8 @@ package ru.praktikum_services.qa_scooter.models;
 
 public class CourierCredentials {
 
-    public final String login;
-    public final String password;
+    public String login;
+    public String password;
 
     public CourierCredentials(String login, String password) {
         this.login = login;

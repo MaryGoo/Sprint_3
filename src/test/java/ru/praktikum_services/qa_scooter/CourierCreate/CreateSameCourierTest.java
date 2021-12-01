@@ -19,15 +19,15 @@ import static org.hamcrest.Matchers.not;
 public class CreateSameCourierTest {
     private CourierClient courierClient;
     private int courierId;
-    Courier courier_1;
-    Courier courier_2;
+    private Courier courierFirst;
+    private Courier courierSecond;
     private ValidatableResponse response;
 
     @Before
     public void setUp(){
         courierClient = new CourierClient();
-        courier_1 = Courier.getRandom();
-        courierClient.create(courier_1);
+        courierFirst = Courier.getRandom();
+        courierClient.create(courierFirst);
     }
 
     @After
@@ -41,12 +41,12 @@ public class CreateSameCourierTest {
     @DisplayName("Создание курьера {courier} с логином, который уже используется")
     public void checkSameCourierCanNotBeCreatedSecondTime() {
         //Arrange
-        courier_2 = Courier.getRandom();
-        courier_2.setLogin(courier_1.getLogin());
+        courierSecond = Courier.getRandom();
+        courierSecond.setLogin(courierFirst.getLogin());
 
         //Act
-        response = courierClient.create(courier_2);
-        courierId = courierClient.login(CourierCredentials.from(courier_1)).extract().path("id");
+        response = courierClient.create(courierSecond);
+        courierId = courierClient.login(CourierCredentials.from(courierFirst)).extract().path("id");
 
         //Assert
         response.assertThat().statusCode(SC_CONFLICT);

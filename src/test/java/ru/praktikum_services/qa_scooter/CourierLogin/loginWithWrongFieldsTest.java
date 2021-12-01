@@ -3,6 +3,7 @@ package ru.praktikum_services.qa_scooter.CourierLogin;
 import io.qameta.allure.Description;
 import io.qameta.allure.Story;
 import io.restassured.response.ValidatableResponse;
+import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -16,7 +17,6 @@ import ru.praktikum_services.qa_scooter.models.CourierCredentials;
 import java.util.Arrays;
 
 import static org.apache.http.HttpStatus.SC_NOT_FOUND;
-import static ru.praktikum_services.qa_scooter.utilities.Utilities.replace;
 
 @RunWith(value = Parameterized.class)
 public class loginWithWrongFieldsTest {
@@ -58,7 +58,13 @@ public class loginWithWrongFieldsTest {
     @DisplayName("Логин курьера в системе с не верным {fieldName}")
     public void checkNewCourierCanNotLoginWithWrongFields() {
         //Arrange
-        replace(courier,fieldName,"someWrongValue");
+        if (fieldName =="login"){
+            courier.setLogin(RandomStringUtils.randomAlphabetic(15));
+        } else if (fieldName == "password"){
+            courier.setPassword(RandomStringUtils.randomAlphabetic(14));
+        } else {
+            System.out.println("Check the field name in the attributes.");
+        }
 
         //Act
         response = courierClient.login(CourierCredentials.from(courier));
