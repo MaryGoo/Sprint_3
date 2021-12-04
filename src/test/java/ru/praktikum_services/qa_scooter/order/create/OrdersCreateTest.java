@@ -1,4 +1,4 @@
-package ru.praktikum_services.qa_scooter.OrdersCreate;
+package ru.praktikum_services.qa_scooter.order.create;
 
 import io.qameta.allure.Description;
 import io.qameta.allure.Story;
@@ -10,7 +10,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import ru.praktikum_services.qa_scooter.client.OrderClient;
-import ru.praktikum_services.qa_scooter.models.Order;
+import ru.praktikum_services.qa_scooter.model.Order;
 
 import java.util.Arrays;
 
@@ -20,7 +20,7 @@ import static org.hamcrest.core.Is.is;
 import static org.hamcrest.core.IsNot.not;
 
 @RunWith(value = Parameterized.class)
-public class OrdersCreate {
+public class OrdersCreateTest {
     private OrderClient orderClient;
     private Order order;
     private String[] colors = new String[2];
@@ -51,7 +51,7 @@ public class OrdersCreate {
         );
     }
 
-    public OrdersCreate(String color_1, String color_2) {
+    public OrdersCreateTest(String color_1, String color_2) {
         colors[0] = color_1;
         colors[1] = color_2;
     }
@@ -62,7 +62,7 @@ public class OrdersCreate {
     @DisplayName("Создание заказа. Позитивный сценарий")
     public void checkNewOrderCanBeCreated() {
         //Arrange
-        order.setColor(colors);
+        order.setColors(colors);
 
         //Act
         response = orderClient.create(order);

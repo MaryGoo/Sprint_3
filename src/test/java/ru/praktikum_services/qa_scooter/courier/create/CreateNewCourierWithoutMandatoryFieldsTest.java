@@ -1,16 +1,15 @@
-package ru.praktikum_services.qa_scooter.CourierCreate;
+package ru.praktikum_services.qa_scooter.courier.create;
 
 import io.qameta.allure.Description;
 import io.qameta.allure.Story;
 import io.restassured.response.ValidatableResponse;
-import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import ru.praktikum_services.qa_scooter.client.CourierClient;
-import ru.praktikum_services.qa_scooter.models.Courier;
+import ru.praktikum_services.qa_scooter.model.Courier;
 
 import java.util.Arrays;
 
@@ -30,8 +29,8 @@ public class CreateNewCourierWithoutMandatoryFieldsTest {
     @Parameterized.Parameters(name = "{index}: в теле запроса отмутствует поле: {0}")
     public static Iterable<Object[]> data() {
         return Arrays.asList(new Object[][]{
-                {Courier.getWithLoginOnly()},
-                {Courier.getWithPasswordOnly()},
+                {Courier.setRandomLogin()},
+                {Courier.setRandomPassword()},
                 }
         );
     }

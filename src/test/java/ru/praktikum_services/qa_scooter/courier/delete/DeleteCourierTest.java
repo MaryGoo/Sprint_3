@@ -1,4 +1,4 @@
-package ru.praktikum_services.qa_scooter.CourierDelete;
+package ru.praktikum_services.qa_scooter.courier.delete;
 
 import io.qameta.allure.Description;
 import io.qameta.allure.Story;
@@ -7,13 +7,13 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.jupiter.api.DisplayName;
 import ru.praktikum_services.qa_scooter.client.CourierClient;
-import ru.praktikum_services.qa_scooter.models.Courier;
-import ru.praktikum_services.qa_scooter.models.CourierCredentials;
+import ru.praktikum_services.qa_scooter.model.Courier;
+import ru.praktikum_services.qa_scooter.model.CourierCredentials;
 
 import static org.apache.http.HttpStatus.SC_NOT_FOUND;
 import static org.apache.http.HttpStatus.SC_OK;
 
-public class DeleteCourier {
+public class DeleteCourierTest {
     private CourierClient courierClient;
     private int courierId;
     private ValidatableResponse response;
@@ -33,8 +33,7 @@ public class DeleteCourier {
     @DisplayName("Удаление курьера {courier}")
     public void checkCourierCanBeDeleted(){
         //Arrange
-        courierClient.create(courier);
-        courierId = courierClient.login(CourierCredentials.from(courier)).extract().path("id");
+        courierId = courierClient.createCourierAndGetCourierId(courier);
 
         //Act
         response = courierClient.delete(courierId);

@@ -1,54 +1,42 @@
-package ru.praktikum_services.qa_scooter.CourierLogin;
+package ru.praktikum_services.qa_scooter.courier.login;
 
 import io.qameta.allure.Description;
 import io.qameta.allure.Story;
 import io.restassured.response.ValidatableResponse;
-import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import ru.praktikum_services.qa_scooter.client.CourierClient;
-import ru.praktikum_services.qa_scooter.models.Courier;
-import ru.praktikum_services.qa_scooter.models.CourierCredentials;
+import ru.praktikum_services.qa_scooter.model.CourierCredentials;
 
 import java.util.Arrays;
 
 import static org.apache.http.HttpStatus.SC_BAD_REQUEST;
 
 @RunWith(value = Parameterized.class)
-public class loginWithoutMandatoryFieldsTest {
+public class LoginWithoutMandatoryFieldsTest {
     private CourierClient courierClient;
-    private String fieldName;
-    private Courier courier;
-    private int courierId;
+    private CourierCredentials body;
     private ValidatableResponse response;
 
-    @Before
-    public void setUp() {
-        courierClient = new CourierClient();
-        courier = Courier.getRandom();
-        courierClient.create(courier);
-        courierId = courierClient.login(CourierCredentials.from(courier)).extract().path("id");
-    }
-
-    @After
-    public void tearDown() {
-        courierClient.delete(courierId);
+   @Before
+   public void setUp() {
+      courierClient = new CourierClient();
     }
 
     @Parameterized.Parameters(name = "{index}: в теле запроса отсутствует поле: {0}")
     public static Iterable<Object[]> data() {
         return Arrays.asList(new Object[][]{
-                        {"login"},
-                        {"password"},
+                        {CourierCredentials.onlyLogin() },
+                        {CourierCredentials.onlyPassword()},
                 }
         );
     }
 
-    public loginWithoutMandatoryFieldsTest(String fieldName) {
-        this.fieldName = fieldName;
+    public LoginWithoutMandatoryFieldsTest(CourierCredentials body) {
+        this.body = body;
     }
 
     @Test
@@ -56,17 +44,8 @@ public class loginWithoutMandatoryFieldsTest {
     @Description("Логин курьера в системе без обязательных полей")
     @DisplayName("Логин курьера в системе без обязательных полей")
     public void checkNewCourierCanNotLoginWithoutMandatoryFields() {
-        //Arrange
-        if (fieldName =="login"){
-            courier.setLogin(null);
-        } else if (fieldName == "password"){
-            courier.setPassword(null);
-        } else {
-            System.out.println("Nothing to replace for null. Check the field name in the attributes.");
-        }
-
         //Act
-        response = courierClient.login(CourierCredentials.from(courier));
+        response = courierClient.login(body);
 
         //Assert
         response.assertThat().statusCode(SC_BAD_REQUEST);

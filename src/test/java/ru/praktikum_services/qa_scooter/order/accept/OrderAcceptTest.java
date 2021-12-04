@@ -1,4 +1,4 @@
-package ru.praktikum_services.qa_scooter.OrderAccept;
+package ru.praktikum_services.qa_scooter.order.accept;
 
 import io.qameta.allure.Description;
 import io.qameta.allure.Story;
@@ -9,15 +9,14 @@ import org.junit.Test;
 import org.junit.jupiter.api.DisplayName;
 import ru.praktikum_services.qa_scooter.client.CourierClient;
 import ru.praktikum_services.qa_scooter.client.OrderClient;
-import ru.praktikum_services.qa_scooter.models.Courier;
-import ru.praktikum_services.qa_scooter.models.CourierCredentials;
-import ru.praktikum_services.qa_scooter.models.Order;
+import ru.praktikum_services.qa_scooter.model.Courier;
+import ru.praktikum_services.qa_scooter.model.Order;
 
 import static org.apache.http.HttpStatus.SC_OK;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.IsEqual.equalTo;
 
-public class OrderAccept {
+public class OrderAcceptTest {
     private OrderClient orderClient;
     private CourierClient courierClient;
     private Order order;
@@ -31,16 +30,15 @@ public class OrderAccept {
 
 
     @Before
-    public void setUp(){
+    public void setUp() {
         orderClient = new OrderClient();
-        courierClient =  new CourierClient();
+        courierClient = new CourierClient();
         order = Order.getRandom();
         courier = Courier.getRandom();
-        courierClient.create(courier);
     }
 
     @After
-    public void tearDown(){
+    public void tearDown() {
         orderClient.finish(orderId);
     }
 
@@ -48,12 +46,12 @@ public class OrderAccept {
     @Story("Принять заказ")
     @Description("Принять заказ. Позитивный сценарий")
     @DisplayName("Принять заказ. Позитивный сценарий")
-    public void checkOrderCanBeAcceptedByCourier(){
+    public void checkOrderCanBeAcceptedByCourier() {
         //Arrange
         orderTrack = orderClient.create(order).extract().path("track");
         responseOrderGetOne = orderClient.getOne(orderTrack);
         orderId = responseOrderGetOne.extract().path("order.id");
-        courierId = courierClient.login(CourierCredentials.from(courier)).extract().path("id");
+        courierId = courierClient.createCourierAndGetCourierId(courier);
 
         //Act
         assertThat(responseOrderGetOne.extract().path("order.status"), equalTo(0));

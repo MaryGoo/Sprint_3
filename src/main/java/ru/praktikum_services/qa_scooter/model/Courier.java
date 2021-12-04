@@ -1,4 +1,4 @@
-package ru.praktikum_services.qa_scooter.models;
+package ru.praktikum_services.qa_scooter.model;
 
 import com.github.javafaker.Faker;
 import org.apache.commons.lang3.RandomStringUtils;
@@ -54,12 +54,11 @@ public class Courier {
         return firstName;
     }
 
-    public static Courier getWithLoginOnly(){
+    public static Courier setRandomLogin() {
         return new Courier().setLogin(RandomStringUtils.randomAlphabetic(10));
     }
 
-    public static Courier getWithPasswordOnly(){
+    public static Courier setRandomPassword() {
         return new Courier().setPassword(RandomStringUtils.randomAlphabetic(10));
     }
-
 }

@@ -2,11 +2,11 @@ package ru.praktikum_services.qa_scooter.client;
 
 import io.qameta.allure.Step;
 import io.restassured.response.ValidatableResponse;
-import ru.praktikum_services.qa_scooter.models.Courier;
-import ru.praktikum_services.qa_scooter.models.CourierCredentials;
+import ru.praktikum_services.qa_scooter.model.Courier;
+import ru.praktikum_services.qa_scooter.model.CourierCredentials;
 
 import static io.restassured.RestAssured.given;
-import static ru.praktikum_services.qa_scooter.apiData.EndPoints.COURIER_PATH;
+import static ru.praktikum_services.qa_scooter.apidata.EndPoints.COURIER_PATH;
 
 public class CourierClient extends RestAssuredClient {
 
@@ -55,5 +55,16 @@ public class CourierClient extends RestAssuredClient {
                 .delete(COURIER_PATH + "/")
                 .then()
                 .log().body();
+    }
+
+    @Step("Получить id курьера")
+    public int getCourierId(Courier courier){
+        return login(CourierCredentials.from(courier)).extract().path("id");
+    }
+
+    @Step("Создать курьера и получить id курьера ")
+    public int createCourierAndGetCourierId(Courier courier){
+        create(courier);
+        return getCourierId(courier);
     }
 }

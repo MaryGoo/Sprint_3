@@ -1,4 +1,4 @@
-package ru.praktikum_services.qa_scooter.CourierDelete;
+package ru.praktikum_services.qa_scooter.courier.delete;
 
 import io.qameta.allure.Description;
 import io.qameta.allure.Story;
@@ -10,7 +10,7 @@ import ru.praktikum_services.qa_scooter.client.CourierClient;
 
 import static org.apache.http.HttpStatus.SC_BAD_REQUEST;
 
-public class DeleteCourierWithoutId {
+public class DeleteCourierWithoutIdTest {
     private CourierClient courierClient;
     private ValidatableResponse response;
 

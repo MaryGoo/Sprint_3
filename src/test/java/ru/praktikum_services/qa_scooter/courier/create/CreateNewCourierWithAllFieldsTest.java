@@ -1,4 +1,4 @@
-package ru.praktikum_services.qa_scooter.CourierCreate;
+package ru.praktikum_services.qa_scooter.courier.create;
 
 import io.qameta.allure.Description;
 import io.qameta.allure.Story;
@@ -8,8 +8,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.jupiter.api.DisplayName;
 import ru.praktikum_services.qa_scooter.client.CourierClient;
-import ru.praktikum_services.qa_scooter.models.Courier;
-import ru.praktikum_services.qa_scooter.models.CourierCredentials;
+import ru.praktikum_services.qa_scooter.model.Courier;
 
 import static org.apache.http.HttpStatus.SC_CREATED;
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -40,14 +39,8 @@ public class CreateNewCourierWithAllFieldsTest {
         //Arrange
         Courier courier = Courier.getRandom();
 
-        //Act
-        response = courierClient.create(courier);
-        courierId = courierClient.login(CourierCredentials.from(courier)).extract().path("id");
-
-        //Assert
-        response.assertThat().statusCode(SC_CREATED);
-        response.assertThat().extract().path("ok").equals(true);
-        assertThat("Courier ID is incorrect", courierId, is(not(0)));
+        //Act and Assert
+        actAndAssert(courier);
     }
 
     @Test
@@ -59,9 +52,14 @@ public class CreateNewCourierWithAllFieldsTest {
         Courier courier = Courier.getRandom();
         courier.setFirstName(null);
 
+        //Act and Assert
+        actAndAssert(courier);
+    }
+
+    private void actAndAssert(Courier courier){
         //Act
         response = courierClient.create(courier);
-        courierId = courierClient.login(CourierCredentials.from(courier)).extract().path("id");
+        courierId = courierClient.getCourierId(courier);
 
         //Assert
         response.assertThat().statusCode(SC_CREATED);

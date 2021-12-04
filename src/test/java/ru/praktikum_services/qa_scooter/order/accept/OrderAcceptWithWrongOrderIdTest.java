@@ -1,4 +1,4 @@
-package ru.praktikum_services.qa_scooter.OrderAccept;
+package ru.praktikum_services.qa_scooter.order.accept;
 
 import io.qameta.allure.Description;
 import io.qameta.allure.Story;
@@ -9,14 +9,13 @@ import org.junit.Test;
 import org.junit.jupiter.api.DisplayName;
 import ru.praktikum_services.qa_scooter.client.CourierClient;
 import ru.praktikum_services.qa_scooter.client.OrderClient;
-import ru.praktikum_services.qa_scooter.models.Courier;
-import ru.praktikum_services.qa_scooter.models.CourierCredentials;
+import ru.praktikum_services.qa_scooter.model.Courier;
 
 import static org.apache.http.HttpStatus.SC_NOT_FOUND;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.IsEqual.equalTo;
 
-public class OrderAcceptWithWrongOrderId {
+public class OrderAcceptWithWrongOrderIdTest {
     private OrderClient orderClient;
     private CourierClient courierClient;
     private Courier courier;
@@ -26,21 +25,20 @@ public class OrderAcceptWithWrongOrderId {
 
 
     @Before
-    public void setUp(){
+    public void setUp() {
         orderClient = new OrderClient();
-        courierClient =  new CourierClient();
+        courierClient = new CourierClient();
         courier = Courier.getRandom();
-        courierClient.create(courier);
-        orderId = Integer.parseInt(RandomStringUtils.random(8,"123456789"));
+        orderId = Integer.parseInt(RandomStringUtils.random(8, "123456789"));
     }
 
     @Test
     @Story("Принять заказ")
     @Description("Попытка принять заказ. В запросе указан не существующий orderId")
     @DisplayName("Попытка принять заказ. В запросе указан не существующий orderId")
-    public void checkOrderCanNotBeAcceptedWithWrongOrderId(){
+    public void checkOrderCanNotBeAcceptedWithWrongOrderId() {
         //Arrange
-        courierId = courierClient.login(CourierCredentials.from(courier)).extract().path("id");
+        courierId = courierClient.createCourierAndGetCourierId(courier);
 
         //Act
         responseAccept = orderClient.acceptOrder(orderId, courierId);

@@ -1,4 +1,4 @@
-package ru.praktikum_services.qa_scooter.OrderAccept;
+package ru.praktikum_services.qa_scooter.order.accept;
 
 import io.qameta.allure.Description;
 import io.qameta.allure.Story;
@@ -8,14 +8,13 @@ import org.junit.Test;
 import org.junit.jupiter.api.DisplayName;
 import ru.praktikum_services.qa_scooter.client.CourierClient;
 import ru.praktikum_services.qa_scooter.client.OrderClient;
-import ru.praktikum_services.qa_scooter.models.Courier;
-import ru.praktikum_services.qa_scooter.models.CourierCredentials;
+import ru.praktikum_services.qa_scooter.model.Courier;
 
-import static org.apache.http.HttpStatus.*;
+import static org.apache.http.HttpStatus.SC_NOT_FOUND;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.IsEqual.equalTo;
 
-public class OrderAcceptWithoutOrderTrack {
+public class OrderAcceptWithoutOrderTrackTest {
     private OrderClient orderClient;
     private CourierClient courierClient;
     private Courier courier;
@@ -28,8 +27,7 @@ public class OrderAcceptWithoutOrderTrack {
         orderClient = new OrderClient();
         courierClient =  new CourierClient();
         courier = Courier.getRandom();
-        courierClient.create(courier);
-    }
+           }
 
     @Test
     @Story("Принять заказ")
@@ -37,7 +35,7 @@ public class OrderAcceptWithoutOrderTrack {
     @DisplayName("Попытка принять заказ. В запросе не указан трек Id")
     public void checkOrderCanNotBeAcceptedWithoutOrderTrack(){
         //Arrange
-        courierId = courierClient.login(CourierCredentials.from(courier)).extract().path("id");
+        courierId = courierClient.createCourierAndGetCourierId(courier);
 
         //Act
         responseAccept = orderClient.acceptOrder(courierId);

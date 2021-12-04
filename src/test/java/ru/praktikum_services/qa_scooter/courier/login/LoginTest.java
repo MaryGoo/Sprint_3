@@ -1,4 +1,4 @@
-package ru.praktikum_services.qa_scooter.CourierLogin;
+package ru.praktikum_services.qa_scooter.courier.login;
 
 import io.qameta.allure.Description;
 import io.qameta.allure.Story;
@@ -8,15 +8,15 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.jupiter.api.DisplayName;
 import ru.praktikum_services.qa_scooter.client.CourierClient;
-import ru.praktikum_services.qa_scooter.models.Courier;
-import ru.praktikum_services.qa_scooter.models.CourierCredentials;
+import ru.praktikum_services.qa_scooter.model.Courier;
+import ru.praktikum_services.qa_scooter.model.CourierCredentials;
 
 import static org.apache.http.HttpStatus.SC_OK;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.not;
 
-public class loginTest {
+public class LoginTest {
     private CourierClient courierClient;
     private int courierId;
     private Courier courier;

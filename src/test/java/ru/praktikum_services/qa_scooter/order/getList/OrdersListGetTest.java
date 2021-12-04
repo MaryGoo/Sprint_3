@@ -1,4 +1,4 @@
-package ru.praktikum_services.qa_scooter.OrdersGetList;
+package ru.praktikum_services.qa_scooter.order.getList;
 
 import io.qameta.allure.Description;
 import io.qameta.allure.Story;
@@ -7,8 +7,8 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.jupiter.api.DisplayName;
 import ru.praktikum_services.qa_scooter.client.OrderClient;
-import ru.praktikum_services.qa_scooter.models.OrderFromDB;
 
+import java.util.HashMap;
 import java.util.List;
 
 import static org.apache.http.HttpStatus.SC_OK;
@@ -17,14 +17,13 @@ import static org.hamcrest.Matchers.emptyArray;
 import static org.hamcrest.core.Is.is;
 import static org.hamcrest.core.IsEqual.equalTo;
 import static org.hamcrest.core.IsNot.not;
-import static ru.praktikum_services.qa_scooter.utilities.Orders.generateOrderFromDBList;
 
-public class OrderGet {
+
+public class OrdersListGetTest {
     private OrderClient orderClient;
     private ValidatableResponse response;
-    private List<OrderFromDB> orderFromDBList;
-    private List<Object> orderFromDBListObj;
     private int limit;
+    List<HashMap<String, Object>> orders;
 
     @Before
     public void setUp() {
@@ -32,20 +31,19 @@ public class OrderGet {
     }
 
     @Test
-    @Story("Получение списка заказов.")
-    @Description("Получение списка заказов. Позитивный сценарий")
-    @DisplayName("Получение списка заказов. Позитивный сценарий")
+    @Story("Получить заказ по его номеру.")
+    @Description("Получить заказ по его номеру. Позитивный сценарий")
+    @DisplayName("Получить заказ по его номеру. Позитивный сценарий")
     public void checkListOfOrdersCanBeGet() {
         //Act
         limit = 10;
         response = orderClient.getList(limit);
-        orderFromDBListObj = response.extract().jsonPath().getList("orders");
-        orderFromDBList = generateOrderFromDBList(orderFromDBListObj);
+        orders = response.extract().jsonPath().getList("orders");
 
         //Assert
         response.assertThat().statusCode(SC_OK);
         response.assertThat().body("data.orders", not(emptyArray()));
-        assertThat(orderFromDBList.size(),equalTo(limit));
-        orderFromDBList.forEach(orderFromDB -> assertThat(orderFromDB.id, is(not(0))));
+        assertThat(orders.size(),equalTo(limit));
+        orders.forEach(order -> assertThat(order.get("id"), is(not(0))));
     }
 }

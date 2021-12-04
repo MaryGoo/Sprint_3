@@ -1,4 +1,4 @@
-package ru.praktikum_services.qa_scooter.OrderAccept;
+package ru.praktikum_services.qa_scooter.order.accept;
 
 import io.qameta.allure.Description;
 import io.qameta.allure.Story;
@@ -9,15 +9,14 @@ import org.junit.Test;
 import org.junit.jupiter.api.DisplayName;
 import ru.praktikum_services.qa_scooter.client.CourierClient;
 import ru.praktikum_services.qa_scooter.client.OrderClient;
-import ru.praktikum_services.qa_scooter.models.Courier;
-import ru.praktikum_services.qa_scooter.models.CourierCredentials;
-import ru.praktikum_services.qa_scooter.models.Order;
+import ru.praktikum_services.qa_scooter.model.Courier;
+import ru.praktikum_services.qa_scooter.model.Order;
 
 import static org.apache.http.HttpStatus.SC_CONFLICT;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.IsEqual.equalTo;
 
-public class OrderAcceptAgain {
+public class OrderAcceptAgainTest {
     private OrderClient orderClient;
     private CourierClient courierClient;
     private Order order;
@@ -35,10 +34,9 @@ public class OrderAcceptAgain {
         courierClient =  new CourierClient();
         order = Order.getRandom();
         courier = Courier.getRandom();
-        courierClient.create(courier);
         orderTrack = orderClient.create(order).extract().path("track");
         orderId = orderClient.getOne(orderTrack).extract().path("order.id");
-        courierId = courierClient.login(CourierCredentials.from(courier)).extract().path("id");
+        courierId = courierClient.createCourierAndGetCourierId(courier);
         orderClient.acceptOrder(orderId, courierId);
     }
 

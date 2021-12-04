@@ -2,10 +2,10 @@ package ru.praktikum_services.qa_scooter.client;
 
 import io.qameta.allure.Step;
 import io.restassured.response.ValidatableResponse;
-import ru.praktikum_services.qa_scooter.models.Order;
+import ru.praktikum_services.qa_scooter.model.Order;
 
 import static io.restassured.RestAssured.given;
-import static ru.praktikum_services.qa_scooter.apiData.EndPoints.ORDERS_PATH;
+import static ru.praktikum_services.qa_scooter.apidata.EndPoints.ORDERS_PATH;
 
 public class OrderClient extends RestAssuredClient{
 
