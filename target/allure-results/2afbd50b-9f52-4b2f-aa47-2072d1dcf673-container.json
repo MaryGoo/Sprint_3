@@ -1,0 +1,1 @@
+{"uuid":"2afbd50b-9f52-4b2f-aa47-2072d1dcf673","name":"checkNewCourierCanNotLoginWithoutMandatoryFields[0: в теле запроса отсутствует поле: ru.praktikum_services.qa_scooter.model.CourierCredentials@604b1e1d]","children":["9492d46b-411b-479f-8679-215440929508"],"befores":[],"afters":[],"start":1638603638551,"stop":1638603698732}

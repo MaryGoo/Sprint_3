@@ -24,8 +24,10 @@ hs_err_pid*
 hs_err_pid*
 /.idea
 /.allure
-/target
-!/target/allure-results
-!/target/site
+/allure-results
+/classes
+/generated-sources
+/generated-test-sources
+/test-classes
 /build
 *.iml

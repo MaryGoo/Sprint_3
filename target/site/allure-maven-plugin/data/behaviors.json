@@ -1,0 +1,709 @@
+{
+  "uid" : "b1a8273437954620fa374b796ffaacdd",
+  "name" : "behaviors",
+  "children" : [ {
+    "name" : "Создание курьера",
+    "children" : [ {
+      "name" : "checkCourierCanNotBeCreatedWithoutMandatoryFields[0: в теле запроса отмутствует поле: login]",
+      "uid" : "b48d7fa9f6d2312f",
+      "parentUid" : "7a4c8698dca1fae12dcbde5685cd616c",
+      "status" : "passed",
+      "time" : {
+        "start" : 1638327155416,
+        "stop" : 1638327158991,
+        "duration" : 3575
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "checkCourierCanNotBeCreatedWithoutMandatoryFields[1: в теле запроса отмутствует поле: password]",
+      "uid" : "25826b366e808e44",
+      "parentUid" : "7a4c8698dca1fae12dcbde5685cd616c",
+      "status" : "passed",
+      "time" : {
+        "start" : 1638327159076,
+        "stop" : 1638327159235,
+        "duration" : 159
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "checkSameCourierCanNotBeCreatedSecondTime",
+      "uid" : "4e54e447f72a4a9c",
+      "parentUid" : "7a4c8698dca1fae12dcbde5685cd616c",
+      "status" : "passed",
+      "time" : {
+        "start" : 1638327159242,
+        "stop" : 1638327160016,
+        "duration" : 774
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "checkCourierCanBeCreatedWithAllFields",
+      "uid" : "3d6baea7c2564097",
+      "parentUid" : "7a4c8698dca1fae12dcbde5685cd616c",
+      "status" : "passed",
+      "time" : {
+        "start" : 1638327228468,
+        "stop" : 1638327228902,
+        "duration" : 434
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "checkCourierCanBeCreatedWithoutFirstName",
+      "uid" : "d030ca938a4a53c4",
+      "parentUid" : "7a4c8698dca1fae12dcbde5685cd616c",
+      "status" : "passed",
+      "time" : {
+        "start" : 1638327228904,
+        "stop" : 1638327229327,
+        "duration" : 423
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "checkCourierCanNotBeCreatedWithoutMandatoryFields[0: в теле запроса отмутствует поле: ru.praktikum_services.qa_scooter.model.Courier@1f6d27cc]",
+      "uid" : "c9c4b56b7f270327",
+      "parentUid" : "7a4c8698dca1fae12dcbde5685cd616c",
+      "status" : "passed",
+      "time" : {
+        "start" : 1638603634873,
+        "stop" : 1638603638319,
+        "duration" : 3446
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "checkCourierCanNotBeCreatedWithoutMandatoryFields[1: в теле запроса отмутствует поле: ru.praktikum_services.qa_scooter.model.Courier@7ce4de34]",
+      "uid" : "7a92d7b0976af30c",
+      "parentUid" : "7a4c8698dca1fae12dcbde5685cd616c",
+      "status" : "passed",
+      "time" : {
+        "start" : 1638603638406,
+        "stop" : 1638603638544,
+        "duration" : 138
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "checkCourierCanBeCreatedWithAllFields",
+      "uid" : "e876cb85d84d77f8",
+      "parentUid" : "7a4c8698dca1fae12dcbde5685cd616c",
+      "status" : "passed",
+      "time" : {
+        "start" : 1638605267563,
+        "stop" : 1638605268046,
+        "duration" : 483
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "checkCourierCanBeCreatedWithoutFirstName",
+      "uid" : "60b9e6beb2e3d99",
+      "parentUid" : "7a4c8698dca1fae12dcbde5685cd616c",
+      "status" : "passed",
+      "time" : {
+        "start" : 1638605268048,
+        "stop" : 1638605268477,
+        "duration" : 429
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "checkCourierCanNotBeCreatedWithoutMandatoryFields[0: в теле запроса отмутствует поле: ru.praktikum_services.qa_scooter.model.Courier@6ca18a14]",
+      "uid" : "2cbe45f670dfaf30",
+      "parentUid" : "7a4c8698dca1fae12dcbde5685cd616c",
+      "status" : "passed",
+      "time" : {
+        "start" : 1638605268921,
+        "stop" : 1638605269055,
+        "duration" : 134
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "checkCourierCanNotBeCreatedWithoutMandatoryFields[1: в теле запроса отмутствует поле: ru.praktikum_services.qa_scooter.model.Courier@c667f46]",
+      "uid" : "70524f8620c84d89",
+      "parentUid" : "7a4c8698dca1fae12dcbde5685cd616c",
+      "status" : "passed",
+      "time" : {
+        "start" : 1638605269060,
+        "stop" : 1638605269177,
+        "duration" : 117
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "checkSameCourierCanNotBeCreatedSecondTime",
+      "uid" : "18401a9174cab63a",
+      "parentUid" : "7a4c8698dca1fae12dcbde5685cd616c",
+      "status" : "passed",
+      "time" : {
+        "start" : 1638605271581,
+        "stop" : 1638605272181,
+        "duration" : 600
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "7a4c8698dca1fae12dcbde5685cd616c"
+  }, {
+    "name" : "Удаление курьера",
+    "children" : [ {
+      "name" : "checkCourierCanBeDeleted",
+      "uid" : "5d8ae09c88e72631",
+      "parentUid" : "273e9162d18b06b435a146fc89f6d1fb",
+      "status" : "passed",
+      "time" : {
+        "start" : 1638327160020,
+        "stop" : 1638327160576,
+        "duration" : 556
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "checkCourierCanBeDeleted",
+      "uid" : "5938b6e3f8261f45",
+      "parentUid" : "273e9162d18b06b435a146fc89f6d1fb",
+      "status" : "passed",
+      "time" : {
+        "start" : 1638327165061,
+        "stop" : 1638327165181,
+        "duration" : 120
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "checkCourierCanBeDeleted",
+      "uid" : "b53b6d08cb83bee0",
+      "parentUid" : "273e9162d18b06b435a146fc89f6d1fb",
+      "status" : "failed",
+      "time" : {
+        "start" : 1638327165594,
+        "stop" : 1638327165734,
+        "duration" : 140
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "checkCourierCanBeDeleted",
+      "uid" : "33627c72bf31fbd8",
+      "parentUid" : "273e9162d18b06b435a146fc89f6d1fb",
+      "status" : "failed",
+      "time" : {
+        "start" : 1638605268481,
+        "stop" : 1638605268602,
+        "duration" : 121
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "checkCourierCanBeDeleted",
+      "uid" : "91a3cbe5c5cfde53",
+      "parentUid" : "273e9162d18b06b435a146fc89f6d1fb",
+      "status" : "passed",
+      "time" : {
+        "start" : 1638605272184,
+        "stop" : 1638605272704,
+        "duration" : 520
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "checkCourierCanBeDeleted",
+      "uid" : "5c728d39e3ab7e89",
+      "parentUid" : "273e9162d18b06b435a146fc89f6d1fb",
+      "status" : "passed",
+      "time" : {
+        "start" : 1638605273688,
+        "stop" : 1638605273824,
+        "duration" : 136
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "273e9162d18b06b435a146fc89f6d1fb"
+  }, {
+    "name" : "Принять заказ",
+    "children" : [ {
+      "name" : "checkOrderCanNotBeAcceptedWithWrongOrderId",
+      "uid" : "2728e8fe85296f14",
+      "parentUid" : "6624383526c406dbe7090ba1fa884c6a",
+      "status" : "passed",
+      "time" : {
+        "start" : 1638327160581,
+        "stop" : 1638327161068,
+        "duration" : 487
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "checkOrderCanBeAcceptedByCourier",
+      "uid" : "2bc53398e48164da",
+      "parentUid" : "6624383526c406dbe7090ba1fa884c6a",
+      "status" : "passed",
+      "time" : {
+        "start" : 1638327162673,
+        "stop" : 1638327163835,
+        "duration" : 1162
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "checkOrderCanBeAcceptedByCourier",
+      "uid" : "4cc2adc7ccea21a5",
+      "parentUid" : "6624383526c406dbe7090ba1fa884c6a",
+      "status" : "passed",
+      "time" : {
+        "start" : 1638327163839,
+        "stop" : 1638327165057,
+        "duration" : 1218
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "checkOrderCanNotBeAcceptedWithoutOrderTrack",
+      "uid" : "709180b60c87d39d",
+      "parentUid" : "6624383526c406dbe7090ba1fa884c6a",
+      "status" : "passed",
+      "time" : {
+        "start" : 1638327165184,
+        "stop" : 1638327165589,
+        "duration" : 405
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "checkOrderCanNotBeAcceptedWithWrongCourier",
+      "uid" : "a68a7cf606055a91",
+      "parentUid" : "6624383526c406dbe7090ba1fa884c6a",
+      "status" : "passed",
+      "time" : {
+        "start" : 1638327229763,
+        "stop" : 1638327230394,
+        "duration" : 631
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "checkOrderCanNotBeAcceptedWithWrongCourier",
+      "uid" : "24829c6e6439aaed",
+      "parentUid" : "6624383526c406dbe7090ba1fa884c6a",
+      "status" : "passed",
+      "time" : {
+        "start" : 1638605200738,
+        "stop" : 1638605203601,
+        "duration" : 2863
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "checkOrderCanNotBeAcceptedWithWrongOrderId",
+      "uid" : "3fe543b3d0dc3d46",
+      "parentUid" : "6624383526c406dbe7090ba1fa884c6a",
+      "status" : "passed",
+      "time" : {
+        "start" : 1638605264583,
+        "stop" : 1638605265056,
+        "duration" : 473
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "checkOrderCanNotBeAcceptedWithoutOrderTrack",
+      "uid" : "b5b45431aeb61b6a",
+      "parentUid" : "6624383526c406dbe7090ba1fa884c6a",
+      "status" : "passed",
+      "time" : {
+        "start" : 1638605266840,
+        "stop" : 1638605267249,
+        "duration" : 409
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "checkOrderCanBeAcceptedByCourier",
+      "uid" : "a982d67487b7e594",
+      "parentUid" : "6624383526c406dbe7090ba1fa884c6a",
+      "status" : "passed",
+      "time" : {
+        "start" : 1638605270370,
+        "stop" : 1638605271578,
+        "duration" : 1208
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "checkOrderCanBeAcceptedByCourier",
+      "uid" : "69734049e3fa090a",
+      "parentUid" : "6624383526c406dbe7090ba1fa884c6a",
+      "status" : "passed",
+      "time" : {
+        "start" : 1638605272707,
+        "stop" : 1638605273685,
+        "duration" : 978
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "6624383526c406dbe7090ba1fa884c6a"
+  }, {
+    "name" : "Создание заказа",
+    "children" : [ {
+      "name" : "checkNewOrderCanBeCreated[0: цвет самоката:  и ]",
+      "uid" : "c847807d5412d65f",
+      "parentUid" : "b9ede9cdea3ec7436187010dae6669bb",
+      "status" : "passed",
+      "time" : {
+        "start" : 1638327161072,
+        "stop" : 1638327161508,
+        "duration" : 436
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "checkNewOrderCanBeCreated[1: цвет самоката: BLACK и ]",
+      "uid" : "3ce3d29f3061d11a",
+      "parentUid" : "b9ede9cdea3ec7436187010dae6669bb",
+      "status" : "passed",
+      "time" : {
+        "start" : 1638327161514,
+        "stop" : 1638327161883,
+        "duration" : 369
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "checkNewOrderCanBeCreated[2: цвет самоката:  и GREY]",
+      "uid" : "911d30a6c0f9c046",
+      "parentUid" : "b9ede9cdea3ec7436187010dae6669bb",
+      "status" : "passed",
+      "time" : {
+        "start" : 1638327161887,
+        "stop" : 1638327162302,
+        "duration" : 415
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "checkNewOrderCanBeCreated[3: цвет самоката: BLACK и GREY]",
+      "uid" : "3f466da8a8883d1b",
+      "parentUid" : "b9ede9cdea3ec7436187010dae6669bb",
+      "status" : "passed",
+      "time" : {
+        "start" : 1638327162307,
+        "stop" : 1638327162669,
+        "duration" : 362
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "checkNewOrderCanBeCreated[0: цвет самоката:  и ]",
+      "uid" : "ff886d753404ed7f",
+      "parentUid" : "b9ede9cdea3ec7436187010dae6669bb",
+      "status" : "passed",
+      "time" : {
+        "start" : 1638605265061,
+        "stop" : 1638605265509,
+        "duration" : 448
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "checkNewOrderCanBeCreated[1: цвет самоката: BLACK и ]",
+      "uid" : "908a6fd348b0b63f",
+      "parentUid" : "b9ede9cdea3ec7436187010dae6669bb",
+      "status" : "passed",
+      "time" : {
+        "start" : 1638605265513,
+        "stop" : 1638605265962,
+        "duration" : 449
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "checkNewOrderCanBeCreated[2: цвет самоката:  и GREY]",
+      "uid" : "cf2b8a771a226242",
+      "parentUid" : "b9ede9cdea3ec7436187010dae6669bb",
+      "status" : "passed",
+      "time" : {
+        "start" : 1638605265966,
+        "stop" : 1638605266367,
+        "duration" : 401
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "checkNewOrderCanBeCreated[3: цвет самоката: BLACK и GREY]",
+      "uid" : "4e405c671b1a3bee",
+      "parentUid" : "b9ede9cdea3ec7436187010dae6669bb",
+      "status" : "passed",
+      "time" : {
+        "start" : 1638605266373,
+        "stop" : 1638605266835,
+        "duration" : 462
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "b9ede9cdea3ec7436187010dae6669bb"
+  }, {
+    "name" : "Получение списка заказов.",
+    "children" : [ {
+      "name" : "checkListOfOrdersCanBeGet",
+      "uid" : "fbd6c8d6fd243178",
+      "parentUid" : "0bf56275b3f0326844a168c6aa451779",
+      "status" : "passed",
+      "time" : {
+        "start" : 1638327165746,
+        "stop" : 1638327166191,
+        "duration" : 445
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "checkListOfOrdersCanBeGet",
+      "uid" : "a919bc392d5edba8",
+      "parentUid" : "0bf56275b3f0326844a168c6aa451779",
+      "status" : "passed",
+      "time" : {
+        "start" : 1638605267253,
+        "stop" : 1638605267558,
+        "duration" : 305
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "0bf56275b3f0326844a168c6aa451779"
+  }, {
+    "name" : "Логин курьера в системе",
+    "children" : [ {
+      "name" : "checkNewCourierCanNotLoginWithoutMandatoryFields[0: в теле запроса отсутствует поле: login]",
+      "uid" : "43af7d8026c66028",
+      "parentUid" : "6072b6ca17dcfb81e48c1da470607db4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1638327166195,
+        "stop" : 1638327166750,
+        "duration" : 555
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "checkNewCourierCanNotLoginWithoutMandatoryFields[1: в теле запроса отсутствует поле: password]",
+      "uid" : "65884ca6b05ae9f4",
+      "parentUid" : "6072b6ca17dcfb81e48c1da470607db4",
+      "status" : "failed",
+      "time" : {
+        "start" : 1638327166756,
+        "stop" : 1638327227357,
+        "duration" : 60601
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "checkNewCourierCanNotLoginWithWrongFields[0: в теле запроса в поле: login указано не верное значение]",
+      "uid" : "e486349382157eaf",
+      "parentUid" : "6072b6ca17dcfb81e48c1da470607db4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1638327227364,
+        "stop" : 1638327227914,
+        "duration" : 550
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "checkNewCourierCanNotLoginWithWrongFields[1: в теле запроса в поле: password указано не верное значение]",
+      "uid" : "ac2488e6f71b8748",
+      "parentUid" : "6072b6ca17dcfb81e48c1da470607db4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1638327227918,
+        "stop" : 1638327228463,
+        "duration" : 545
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "checkNewCourierCanLogin",
+      "uid" : "bd2d8f6c7a8a523c",
+      "parentUid" : "6072b6ca17dcfb81e48c1da470607db4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1638327229330,
+        "stop" : 1638327229760,
+        "duration" : 430
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "checkNewCourierCanNotLoginWithoutMandatoryFields[0: в теле запроса отсутствует поле: ru.praktikum_services.qa_scooter.model.CourierCredentials@604b1e1d]",
+      "uid" : "32bbedcf510c2934",
+      "parentUid" : "6072b6ca17dcfb81e48c1da470607db4",
+      "status" : "failed",
+      "time" : {
+        "start" : 1638603638553,
+        "stop" : 1638603698728,
+        "duration" : 60175
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "checkNewCourierCanNotLoginWithoutMandatoryFields[1: в теле запроса отсутствует поле: ru.praktikum_services.qa_scooter.model.CourierCredentials@62566842]",
+      "uid" : "678f521c70673897",
+      "parentUid" : "6072b6ca17dcfb81e48c1da470607db4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1638603698744,
+        "stop" : 1638603698870,
+        "duration" : 126
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "checkNewCourierCanNotLoginWithoutMandatoryFields[0: в теле запроса отсутствует поле: ru.praktikum_services.qa_scooter.model.CourierCredentials@1807e3f6]",
+      "uid" : "28a1877eff4cde67",
+      "parentUid" : "6072b6ca17dcfb81e48c1da470607db4",
+      "status" : "failed",
+      "time" : {
+        "start" : 1638605203660,
+        "stop" : 1638605263790,
+        "duration" : 60130
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "checkNewCourierCanNotLoginWithoutMandatoryFields[1: в теле запроса отсутствует поле: ru.praktikum_services.qa_scooter.model.CourierCredentials@72c8e7b]",
+      "uid" : "93d0cf894d68efad",
+      "parentUid" : "6072b6ca17dcfb81e48c1da470607db4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1638605263802,
+        "stop" : 1638605263961,
+        "duration" : 159
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "checkNewCourierCanLogin",
+      "uid" : "5fffacc935a8db53",
+      "parentUid" : "6072b6ca17dcfb81e48c1da470607db4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1638605263967,
+        "stop" : 1638605264578,
+        "duration" : 611
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "checkNewCourierCanNotLoginWithWrongPassword",
+      "uid" : "f85e47518d8f71d3",
+      "parentUid" : "6072b6ca17dcfb81e48c1da470607db4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1638605269183,
+        "stop" : 1638605269733,
+        "duration" : 550
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "checkNewCourierCanNotLoginWithWrongLogin",
+      "uid" : "467fe5c7d6b6af1",
+      "parentUid" : "6072b6ca17dcfb81e48c1da470607db4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1638605269735,
+        "stop" : 1638605270367,
+        "duration" : 632
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "6072b6ca17dcfb81e48c1da470607db4"
+  }, {
+    "name" : "Получить заказ по его номеру.",
+    "children" : [ {
+      "name" : "checkListOfOrdersCanBeGet",
+      "uid" : "66b5bc7cc05a358d",
+      "parentUid" : "606c6c5f07db6de5defec2c07f8c335b",
+      "status" : "passed",
+      "time" : {
+        "start" : 1638327230397,
+        "stop" : 1638327230682,
+        "duration" : 285
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "checkListOfOrdersCanBeGet",
+      "uid" : "822a484c5242b76a",
+      "parentUid" : "606c6c5f07db6de5defec2c07f8c335b",
+      "status" : "passed",
+      "time" : {
+        "start" : 1638605268607,
+        "stop" : 1638605268915,
+        "duration" : 308
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "606c6c5f07db6de5defec2c07f8c335b"
+  } ]
+}

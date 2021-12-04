@@ -1,0 +1,1 @@
+{"uuid":"40718c39-2b1b-4963-ae8f-ea1dd2b22b52","name":"checkNewCourierCanNotLoginWithoutMandatoryFields[0: в теле запроса отсутствует поле: login]","children":["b752573c-1572-4a06-8c86-1b3c51f88946"],"befores":[],"afters":[],"start":1638327166194,"stop":1638327166753}
