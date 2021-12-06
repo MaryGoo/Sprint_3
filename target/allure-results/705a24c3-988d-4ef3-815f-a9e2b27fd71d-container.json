@@ -1,0 +1,1 @@
+{"uuid":"705a24c3-988d-4ef3-815f-a9e2b27fd71d","name":"checkCourierCanNotBeCreatedWithoutMandatoryFields[1: в теле запроса отмутствует поле: password]","children":["9af43dfd-2c46-43ed-84ce-772075ae5f7f"],"befores":[],"afters":[],"start":1638327159074,"stop":1638327159237}
