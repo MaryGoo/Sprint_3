@@ -1,1 +1,0 @@
-{"uuid":"29b67194-8a5f-4f3d-829e-a6bc94fd2881","name":"checkCourierCanNotBeCreatedWithoutMandatoryFields[1: в теле запроса отмутствует поле: ru.praktikum_services.qa_scooter.model.Courier@7ce4de34]","children":["9edab9e4-4578-4e57-b1c3-71e1395ed3e8"],"befores":[],"afters":[],"start":1638603638404,"stop":1638603638546}

@@ -1,0 +1,17 @@
+D:\autotests\yandex\Sprint_3\src\test\java\ru\praktikum_services\qa_scooter\courier\create\CreateNewCourierWithAllFieldsTest.java
+D:\autotests\yandex\Sprint_3\src\test\java\ru\praktikum_services\qa_scooter\courier\delete\DeleteCourierTest.java
+D:\autotests\yandex\Sprint_3\src\test\java\ru\praktikum_services\qa_scooter\order\accept\OrderAcceptTest.java
+D:\autotests\yandex\Sprint_3\src\test\java\ru\praktikum_services\qa_scooter\order\accept\OrderAcceptWithoutOrderTrackTest.java
+D:\autotests\yandex\Sprint_3\src\test\java\ru\praktikum_services\qa_scooter\order\getList\OrdersListGetTest.java
+D:\autotests\yandex\Sprint_3\src\test\java\ru\praktikum_services\qa_scooter\order\accept\OrderAcceptWithWrongOrderIdTest.java
+D:\autotests\yandex\Sprint_3\src\test\java\ru\praktikum_services\qa_scooter\order\accept\OrderAcceptWithWrongCourierIdTest.java
+D:\autotests\yandex\Sprint_3\src\test\java\ru\praktikum_services\qa_scooter\courier\create\CreateNewCourierWithoutMandatoryFieldsTest.java
+D:\autotests\yandex\Sprint_3\src\test\java\ru\praktikum_services\qa_scooter\courier\create\CreateSameCourierTest.java
+D:\autotests\yandex\Sprint_3\src\test\java\ru\praktikum_services\qa_scooter\order\accept\OrderAcceptAgainTest.java
+D:\autotests\yandex\Sprint_3\src\test\java\ru\praktikum_services\qa_scooter\order\getList\OrderGetTest.java
+D:\autotests\yandex\Sprint_3\src\test\java\ru\praktikum_services\qa_scooter\courier\login\LoginWithoutMandatoryFieldsTest.java
+D:\autotests\yandex\Sprint_3\src\test\java\ru\praktikum_services\qa_scooter\courier\login\LoginWithWrongFieldsTest.java
+D:\autotests\yandex\Sprint_3\src\test\java\ru\praktikum_services\qa_scooter\courier\delete\DeleteCourierWithWrongIdTest.java
+D:\autotests\yandex\Sprint_3\src\test\java\ru\praktikum_services\qa_scooter\order\create\OrdersCreateTest.java
+D:\autotests\yandex\Sprint_3\src\test\java\ru\praktikum_services\qa_scooter\courier\login\LoginTest.java
+D:\autotests\yandex\Sprint_3\src\test\java\ru\praktikum_services\qa_scooter\courier\delete\DeleteCourierWithoutIdTest.java
