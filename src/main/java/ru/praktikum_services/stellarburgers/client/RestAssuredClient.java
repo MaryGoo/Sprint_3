@@ -1,4 +1,4 @@
-package ru.praktikum_services.qa_scooter.client;
+package ru.praktikum_services.stellarburgers.client;
 
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.http.ContentType;
@@ -8,7 +8,7 @@ public class RestAssuredClient {
     public static RequestSpecification getBaseSpec(){
         return new RequestSpecBuilder()
                 .setContentType(ContentType.JSON)
-                .setBaseUri("https://qa-scooter.praktikum-services.ru")
+                .setBaseUri("https://stellarburgers.nomoreparties.site")
                 .build();
     }
 }
