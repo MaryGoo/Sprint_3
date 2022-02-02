@@ -3,12 +3,13 @@ package ru.praktikum_services.stellarburgers.user.update;
 import com.github.javafaker.Faker;
 import io.qameta.allure.Description;
 import io.qameta.allure.Story;
+import io.qameta.allure.junit4.DisplayName;
 import io.restassured.response.ValidatableResponse;
 import org.apache.commons.lang3.RandomStringUtils;
+import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.jupiter.api.DisplayName;
 import ru.praktikum_services.stellarburgers.client.UserClient;
 import ru.praktikum_services.stellarburgers.model.User;
 
@@ -33,6 +34,11 @@ public class UpdateUserTest {
         userClient = new UserClient();
         user = User.getRandom();
         token = userClient.create(user).extract().path("accessToken");
+    }
+
+    @After
+    public void tearDown() {
+        userClient.delete(token);
     }
 
     @Test
